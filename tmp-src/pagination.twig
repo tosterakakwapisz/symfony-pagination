@@ -1,0 +1,67 @@
+<ul class="pagination justify-content-center">
+  <li class="page-item {{pagination.left.disabled}}">
+    <a class="page-link" href="{{pagination.left.link}}">
+      {{pagination.left.content}}
+    </a>
+  </li>
+
+  {% if pagination.firstPage is not null %}
+    <li class="page-item {{pagination.firstPage.disabled}}">
+      <a class="page-link" href="{{pagination.firstPage.link}}">
+        {{pagination.firstPage.content}}
+      </a>
+    </li>
+  {% endif %}
+
+  {% if pagination.leftSpacer is not null %}
+    <li class="page-item disabled">
+      <span class="page-link">
+        {{pagination.leftSpacer.content}}
+      </span>
+    </li>
+  {% endif %}
+
+  {% for page in pagination.leftPages %}
+    <li class="page-item">
+      <a class="page-link" href="{{page.link}}">
+        {{page.content}}
+      </a>
+    </li>
+  {% endfor %}
+
+  <li class="page-item active">
+    <span class="page-link">
+      {{pagination.current.content}}
+    </span>
+  </li>
+
+  {% for page in pagination.rightPages %}
+    <li class="page-item">
+      <a class="page-link" href="{{page.link}}">
+        {{page.content}}
+      </a>
+    </li>
+  {% endfor %}
+
+  {% if pagination.rightSpacer is not null %}
+    <li class="page-item disabled">
+      <span class="page-link">
+        {{pagination.rightSpacer.content}}
+      </span>
+    </li>
+  {% endif %}
+
+  {% if pagination.lastPage is not null %}
+    <li class="page-item {{pagination.lastPage.disabled}}">
+      <a class="page-link" href="{{pagination.lastPage.link}}">
+        {{pagination.lastPage.content}}
+      </a>
+    </li>
+  {% endif %}
+
+  <li class="page-item {{pagination.right.disabled}}">
+    <a class="page-link" href="{{pagination.right.link}}">
+      {{pagination.right.content}}
+    </a>
+  </li>
+</ul>
